@@ -1,43 +1,41 @@
 # How to download your Lovable project
 
-**Files in this repo**
+This repo has two files:
 
-- [`lovable-local-copy.js`](./lovable-local-copy.js) — collector script (paste this into the Lovable console)
-- This README — step-by-step guide
+- [`lovable-local-copy.js`](./lovable-local-copy.js) — paste this into the Lovable console
+- This README — how to use it
 
-Lovable’s **Download codebase** zip is a paid feature. You can still open **Code** and read every file. The script copies that tree onto your computer so you do not paste files one by one.
-
-You do **not** need the local web app if you already have the script. Open the script, copy all of it, and follow the steps below.
+Lovable’s **Download codebase** zip is a paid feature. You can still open **Code** and read every file. This script copies that tree onto your computer so you do not copy files one by one.
 
 Use it only on a project you can already open while signed in. It does not restore credits or unlock paid editing.
 
-**Official free option:** GitHub sync works on every Lovable plan, including Free. If you have a GitHub account, connect the project and clone it. Use this script when you want a folder now without GitHub.
+**Official free option:** GitHub sync works on every Lovable plan, including Free. Connect the project under **Project settings → Git → GitHub**, then clone it.
+
+> **إخلاء مسؤولية:** هذا الملف للمساعدة في نسخ مشروعك الذي تستطيع فتحه أصلًا. إن كان في استخدامه شيء محرّم أو مخالف، فأنا بريء منه، والمسؤولية على من يستخدمه.
+>
+> **Disclaimer:** This is only for copying a project you can already open. If using it is forbidden or against the rules, I am not responsible. Anyone who uses it does so at their own responsibility.
 
 ---
 
 ## What you need
 
-- A browser (Chrome or Edge work best)
+- Chrome or Edge (for **Save to folder**; zip works in any browser)
 - Your Lovable project open and signed in
-- The file [`lovable-local-copy.js`](./lovable-local-copy.js)
-
-Optional: run this repo locally if you want the helper pages at [http://127.0.0.1:43147](http://127.0.0.1:43147) (`npm install` then `npm run dev`). The script itself does not need that.
+- [`lovable-local-copy.js`](./lovable-local-copy.js)
 
 ---
 
-## Download the project (main method)
+## Steps
 
-Do these steps in order.
+### 1. Copy the script
 
-### 1. Copy the collector
-
-Open [`lovable-local-copy.js`](./lovable-local-copy.js) and copy the entire file.
+Open [`lovable-local-copy.js`](./lovable-local-copy.js) on GitHub, click **Raw**, then copy the entire file.
 
 ### 2. Open Code in Lovable (not Preview)
 
 In Lovable, open your project. In the top bar click **Code**.
 
-You should see a file tree (`src/`, `package.json`, and so on). If you still see the live website, you are on **Preview**. Switch to **Code**.
+You should see a file tree (`src/`, `package.json`). If you still see the live website, you are on **Preview**. Switch to **Code**.
 
 ### 3. Open the browser console
 
@@ -46,19 +44,15 @@ Click the **Console** tab (not Elements, not Network).
 
 ### 4. Allow paste (Chrome warning)
 
-Chrome often shows a yellow warning:
-
-> Don’t paste code into the DevTools Console…
-
-In the console, type exactly:
+Chrome often shows a yellow warning and blocks paste. In the console type exactly:
 
 ```text
 allow pasting
 ```
 
-Press **Enter**. After that, paste is allowed in this tab.
+Press **Enter**. After that, paste works in this tab.
 
-### 5. Paste the collector
+### 5. Paste the script
 
 Click in the console, paste (`Ctrl+V` or `⌘V`), press **Enter**.
 
@@ -75,48 +69,24 @@ On the purple panel:
 
 **Save to folder** needs Chrome. **Download zip** works in any browser.
 
-The saved tree should match the Code panel: `src/…`, `package.json`, `vite.config.ts`, and the rest.
+The saved tree should match the Code panel: `src/…`, `package.json`, and the rest.
 
 ---
 
-## If you already have a zip or JSON
+## After you save the files
 
-On [http://127.0.0.1:43147](http://127.0.0.1:43147):
-
-1. Under **Unpack a dump**, choose the `.zip` or `.json` file.
-2. Click **Write to exports/**.
-
-Folders are written next to this project in `exports/`.
-
----
-
-## Run the copied app
-
-Most Lovable apps are Vite (or similar). In the folder you saved:
+That folder is your Lovable app, not this repo. Most Lovable apps are Vite. Inside the folder you just saved:
 
 ```bash
 npm install
 npm run dev
 ```
 
-If the project has `bun.lock`:
+If it has `bun.lock`:
 
 ```bash
 bun install
 bun run dev
-```
-
----
-
-## Official GitHub export (free on all plans)
-
-1. Create a GitHub account if you do not have one.
-2. In Lovable open **Project settings → Git → GitHub**.
-3. Install the Lovable GitHub app and connect this project.
-4. Clone the new repo:
-
-```bash
-git clone git@github.com:YOU/YOUR-APP.git
 ```
 
 ---
@@ -131,13 +101,14 @@ git clone git@github.com:YOU/YOUR-APP.git
 | No purple panel after paste | Confirm you pasted in **Console** on the Lovable tab, then press Enter. |
 | Collect finds 0 files | Open **Code**, expand the file tree, click Collect again. |
 | Save to folder does nothing | Use Chrome, or click **Download zip** instead. |
-| Copy from the helper page does nothing | Open [`lovable-local-copy.js`](./lovable-local-copy.js) and copy the file contents. |
 
 ---
 
-## What this tool does not do
+## What this script does not do
 
 - It does not log you into someone else’s project.
 - It does not bypass Lovable billing or unpause a job that ran out of credits.
 - It does not turn a read-only editor into a paid workspace.
 - It only copies files you can already open in **Code**.
+
+إن كان في هذا الأمر حرمانية، فأنا بريء منها.
